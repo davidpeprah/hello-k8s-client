@@ -8,9 +8,8 @@ SERVER_PORT = os.getenv('SERVER_PORT')
 if SERVER_PORT and SERVER:
     print(f"{SERVER}:{SERVER_PORT}")
     while True:
-        sleep(2)
         try:
-            response = requests.get(f'http://{SERVER}:{SERVER_PORT}')
+            response = requests.get(f'http://{SERVER}:{SERVER_PORT}', timeout=3)
 
             if response.status_code == 200:
                 print(response.text)
