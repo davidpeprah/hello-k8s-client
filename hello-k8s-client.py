@@ -10,7 +10,7 @@ if SERVER_PORT and SERVER:
     while True:
         sleep(1)
         try:
-            response = requests.get(f'http://{SERVER}:{SERVER_PORT}', timeout=0.001)
+            response = requests.get(f'http://{SERVER}:{SERVER_PORT}', timeout=1)
 
             if response.status_code == 200:
                 print(response.text)
